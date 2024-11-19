@@ -1,0 +1,37 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-list {
+    display: flex;
+    align-items: center;
+    gap: 3.438rem;
+    a {
+      font-size: 1rem;
+      line-height: var(--line-height-normal);
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  &-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .navigation {
+    &-list {
+      display: none;
+    }
+    &-phone {
+      display: none !important;
+    }
+    &-mobile {
+      display: flex;
+    }
+  }
+}

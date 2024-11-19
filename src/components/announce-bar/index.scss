@@ -1,0 +1,49 @@
+.announce-bar {
+  padding: 14px 0;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__map {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  &__mail {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    &--mobile {
+      display: none;
+    }
+    &--phone {
+      display: none;
+    }
+  }
+  &__message {
+    a {
+      font-weight: 700;
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .announce-bar {
+    padding-top: 0;
+    &__message {
+    }
+    &__mail {
+      display: none;
+      &--phone {
+        display: flex;
+      }
+      &--mobile {
+        display: flex;
+      }
+    }
+    &__map {
+      display: none;
+    }
+  }
+}
