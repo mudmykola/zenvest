@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper/modules';
 import BaseButton from '@/shared/BaseButton.vue';
 
-const props = defineProps({
+defineProps({
   slides: {
     type: Array,
     default: () => [
