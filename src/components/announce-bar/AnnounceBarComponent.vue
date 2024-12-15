@@ -4,7 +4,7 @@ import IconPlaceMarker from '@/components/icons/IconPlaceMarker.vue';
 import IconMail from '@/components/icons/IconMail.vue';
 import IconPhone from '@/components/icons/IconPhone.vue';
 
-const props = defineProps({
+defineProps({
   text: {
     type: String,
     default: 'Kubánské náměstí 1391/11, Vršovice, 100 00 Praha 10',
