@@ -4,6 +4,7 @@ import 'swiper/swiper-bundle.css';
 import 'swiper/css/navigation';
 
 import { ref, onMounted } from 'vue';
+import IconStar from '@/components/icons/IconStar.vue';
 
 defineProps({
   reviews: {
@@ -51,7 +52,9 @@ onMounted(() => {
       <SwiperSlide v-for="review in reviews" :key="review.id">
         <div class="review-item">
           <div class="review-rating">
-            <span v-for="n in review.rating" :key="n" class="star">⭐</span>
+            <span v-for="n in review.rating" :key="n" class="star">
+              <IconStar />
+            </span>
           </div>
 
           <div class="review-content">
