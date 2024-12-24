@@ -1,0 +1,30 @@
+.gallery {
+  &-box {
+    margin-top: 89px;
+  }
+  &-list__group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 25px;
+    &--first {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      &_video {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      &_img {
+        &-block {
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}
