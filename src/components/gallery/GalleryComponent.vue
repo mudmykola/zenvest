@@ -27,8 +27,10 @@ const galleryData = {
   ],
 };
 
-const galleryTitle = 'Gallery Title';
-const galleryDescription = 'Description of the gallery goes here.';
+const galleryTitle =
+  '<span class="highlightGreen">8 790</span> realizací po celé České republice';
+const galleryDescription =
+  'Pomohli jsme snížit náklady na teplo domova pro XXX domácností v celé České republice.';
 </script>
 
 <template>
@@ -36,7 +38,7 @@ const galleryDescription = 'Description of the gallery goes here.';
     <div class="container-fluid">
       <div class="gallery-inner">
         <div class="gallery-inner__title">
-          <h2>{{ galleryTitle }}</h2>
+          <h2 v-html="galleryTitle"></h2>
           <p>{{ galleryDescription }}</p>
         </div>
         <GalleryListComponent

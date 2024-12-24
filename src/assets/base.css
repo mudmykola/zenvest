@@ -10,6 +10,8 @@
   --line-height-normal: 1.4;
   --line-height-large: 1.6;
 
+  --mb-40: 40px;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,6 +19,7 @@
 
   --spacing-sm: 8px;
   --spacing-md: 16px;
+  --spacing-md-lg: 18px;
   --spacing-lg: 24px;
 
   --primary-color: #646cff;
@@ -208,4 +211,10 @@ button:focus-visible {
     padding-left: var(--spacing-sm);
     padding-right: var(--spacing-sm);
   }
+}
+.highlightGreen {
+  font-size: 35px;
+  line-height: 42px;
+  font-weight: 600;
+  color: var(--color-muted-green);
 }
