@@ -1,5 +1,6 @@
 <script setup>
 import GalleryListComponent from '@/components/gallery/GalleryListComponent.vue';
+import IconArrow from '@/components/icons/IconArrow.vue';
 
 const galleryData = {
   videos: [{ id: 1, src: 'https://www.w3schools.com/html/mov_bbb.mp4' }],
@@ -31,6 +32,8 @@ const galleryTitle =
   '<span class="highlightGreen">8 790</span> realizací po celé České republice';
 const galleryDescription =
   'Pomohli jsme snížit náklady na teplo domova pro XXX domácností v celé České republice.';
+const galleryLinkName = 'Zobrazit vše';
+const galleryLink = '#';
 </script>
 
 <template>
@@ -45,6 +48,10 @@ const galleryDescription =
           :videos="galleryData.videos"
           :images="galleryData.images"
         />
+        <div class="gallery-inner__link">
+          <a :href="galleryLink">{{ galleryLinkName }}</a>
+          <IconArrow />
+        </div>
       </div>
     </div>
   </div>
