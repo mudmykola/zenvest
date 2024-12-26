@@ -1,5 +1,27 @@
 .gallery {
   &-inner {
+    &__link {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 19px;
+      transition: all 0.5s linear;
+      &:hover svg {
+        rotate: 45deg;
+        transition: all 0.3s linear;
+      }
+      a {
+        font-size: 25px;
+        line-height: 35px;
+        font-weight: 600;
+        color: var(--color-accent);
+      }
+      svg {
+        width: 18px;
+        height: 18px;
+        transition: all 0.5s linear;
+      }
+    }
     &__title {
       h2 {
         font-size: 35px;
