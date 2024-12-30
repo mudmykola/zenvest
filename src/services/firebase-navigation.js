@@ -1,7 +1,6 @@
 import { db } from '@/services/firebase.js';
 import { collection, getDocs, doc, setDoc } from 'firebase/firestore';
 
-// Завантаження даних із Firestore
 export const fetchMenuItems = async () => {
   try {
     const querySnapshot = await getDocs(
@@ -18,7 +17,6 @@ export const fetchMenuItems = async () => {
   }
 };
 
-// Оновлення пункту меню
 export const updateMenuItem = async (id, data) => {
   try {
     const menuDoc = doc(db, 'header/navigation/menu', id);
