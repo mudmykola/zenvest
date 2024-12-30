@@ -38,7 +38,7 @@ const phoneLink = computed(() => `tel:${props.phone}`);
         <IconPlaceMarker />
       </div>
       <div class="announce-bar__text">
-        <p>{{ text }}</p>
+        <p>{{ props.text }}</p>
       </div>
     </div>
     <div class="announce-bar__mail--phone">
@@ -59,6 +59,7 @@ const phoneLink = computed(() => `tel:${props.phone}`);
     </div>
   </div>
 </template>
+
 <style lang="scss">
 @use 'index.scss' as *;
 </style>

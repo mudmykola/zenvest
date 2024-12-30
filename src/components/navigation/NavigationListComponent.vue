@@ -1,21 +1,22 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { fetchMenuItems } from '@/services/firebase-navigation';
 
-const sections = ref([
-  { name: 'Tepelná čerpadla', link: '#tepelná-čerpadla' },
-  { name: 'Klimatizace', link: '#klimatizace' },
-  { name: 'O nás', link: '#o-nás' },
-  { name: 'Kontakt', link: '#kontakt' },
-]);
+const menuItems = ref([]);
+
+onMounted(async () => {
+  menuItems.value = await fetchMenuItems();
+});
 </script>
 
 <template>
   <ul class="navigation-list">
-    <li v-for="section in sections" :key="section.name">
-      <a :href="section.link">{{ section.name }}</a>
+    <li v-for="item in menuItems" :key="item.id">
+      <a :href="item.link">{{ item.name }}</a>
     </li>
   </ul>
 </template>
+
 <style lang="scss">
 @use 'index.scss' as *;
 </style>
