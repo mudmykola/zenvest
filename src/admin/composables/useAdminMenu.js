@@ -9,18 +9,15 @@ export default function useAdminMenu() {
   const editingItem = ref(null);
   const newMenuItem = ref({ name: '', link: '' });
 
-  // Завантаження даних із Firestore
   onMounted(async () => {
     menuItems.value = await fetchMenuItems();
   });
 
-  // Початок редагування
   const startEditing = (index) => {
     editingIndex.value = index;
     editingItem.value = { ...menuItems.value[index] };
   };
 
-  // Збереження змін
   const saveEdit = async () => {
     if (editingIndex.value !== null) {
       const id = menuItems.value[editingIndex.value].id;
@@ -30,12 +27,10 @@ export default function useAdminMenu() {
     }
   };
 
-  // Скасування редагування
   const cancelEdit = () => {
     editingIndex.value = null;
   };
 
-  // Додавання нового пункту меню
   const addMenuItem = async () => {
     if (newMenuItem.value.name && newMenuItem.value.link) {
       const docRef = await addDoc(
@@ -43,16 +38,15 @@ export default function useAdminMenu() {
         newMenuItem.value
       );
       menuItems.value.push({ id: docRef.id, ...newMenuItem.value });
-      newMenuItem.value = { name: '', link: '' }; // Очищення форми
+      newMenuItem.value = { name: '', link: '' };
     } else {
       alert('Заповніть обидва поля!');
     }
   };
 
-  // Видалення пункту меню
   const deleteMenuItem = async (id, index) => {
     await deleteDoc(doc(db, 'header/navigation/menu', id));
-    menuItems.value.splice(index, 1); // Видалення з локального списку
+    menuItems.value.splice(index, 1);
   };
 
   return {
